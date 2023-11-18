@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.bg-content {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+.bg-div {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+.typebot{
+    position: fixed;
+    right: 0;
+    top: 10%;
+    width: 100%;
+    height: 50%;
+}
