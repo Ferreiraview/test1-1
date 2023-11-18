@@ -57,8 +57,9 @@ function changeBg(type, src) {
         bg.removeChild(bg.children[0])
     }
     if (type === 'video') {
-        newElement.play()
         newElement.loop = true
+        newElement.autoplay = true
+        newElement.muted = true
     }
 }
 
@@ -66,6 +67,9 @@ let typeBotIndex = 0
 function runTypeBot(asset, typebotInfo, next) {
     Loader.load(asset.type, asset.src, () => {
         changeBg(asset.type, asset.src)
+        if (typeBotIndex > 0) {
+            document.getElementById('typebots').removeChild(document.getElementById(`typebot-${typeBotIndex - 1}`))
+        }
         const typebotDiv = document.createElement('typebot-standard')
         typebotDiv.id = `typebot-${typeBotIndex}`
         typebotDiv.classList.add('typebot')
