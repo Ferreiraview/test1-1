@@ -107,7 +107,7 @@ function generateBotsInFlow(bots) {
 }
 
 (() => {
-     Loader.load('video', 'public/rain.mp4', () => { });
+    Loader.load('video', 'public/rain.mp4', () => { });
     Loader.load('img', 'public/0.jpg', () => { });
     
 
