@@ -11,6 +11,10 @@ class Loader {
             onload()
         }
         const element = createElementByType(type)
+        if (type === 'video') {
+            element.muted = true
+            element.autoplay = true
+        }
         element.src = src
         if (type === 'img') {
             const eventName = 'load'
@@ -23,6 +27,7 @@ class Loader {
         } else if (type === 'video') {
             const eventName = 'loadeddata'
             const evFunc = () => {
+                
                 if (element.readyState === 4) {
                     element.removeEventListener(eventName, evFunc)
                     this.loadedFiles.push(src)
@@ -50,16 +55,16 @@ function createElementByType(type) {
 const bg = document.getElementById('bg')
 function changeBg(type, src) {
     const newElement = createElementByType(type)
+    if (type === 'video') {
+        newElement.loop = true
+        newElement.autoplay = true
+        newElement.muted = true
+    }
     newElement.src = src
     bg.appendChild(newElement)
     newElement.classList.add('bg-content')
     while (bg.children.length > 1) {
         bg.removeChild(bg.children[0])
-    }
-    if (type === 'video') {
-        newElement.loop = true
-        newElement.autoplay = true
-        newElement.muted = true
     }
 }
 
