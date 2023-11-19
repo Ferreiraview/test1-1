@@ -107,18 +107,18 @@ function generateBotsInFlow(bots) {
 }
 
 (() => {
+    Loader.load('img', 'public/0.jpg', () => { });
     Loader.load('video', 'public/rain.mp4', () => { });
-    Loader.load('img', 'public/1.jpg', () => { });
 
     const bot1 = {
-        asset: { type: 'video', src: 'public/rain.mp4' },
+        asset: { type: 'img', src: 'public/0.jpg' },
         bot: {
             bot: 'welcome-eer92l9',
             host: 'https://app.ferreiraview.com'
         }
     };
     const bot2 = {
-        asset: { type: 'img', src: 'public/1.jpg' },
+        asset: { type: 'video', src: 'public/rain.mp4' },
         bot: {
             bot: 'id2-woken44',
             host: 'https://app.ferreiraview.com'
