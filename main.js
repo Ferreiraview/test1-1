@@ -61,7 +61,7 @@ function changeBg(type, src) {
         newElement.autoplay = true
         newElement.muted = true
         newElement.playsinline = true
-        newElement.play ()
+        newElement.play()
     }
     newElement.src = src
     bg.appendChild(newElement)
