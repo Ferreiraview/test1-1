@@ -14,6 +14,7 @@ class Loader {
         if (type === 'video') {
             element.muted = true
             element.autoplay = true
+            element.playsinline = true
         }
         element.src = src
         if (type === 'img') {
@@ -59,6 +60,7 @@ function changeBg(type, src) {
         newElement.loop = true
         newElement.autoplay = true
         newElement.muted = true
+        newElement.playsinline = true
     }
     newElement.src = src
     bg.appendChild(newElement)
