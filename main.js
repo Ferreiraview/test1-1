@@ -1,5 +1,5 @@
 
-import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2/dist/web.js'
+import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.22/dist/web.js'
 
 class Loader {
     static loadedFiles = []
