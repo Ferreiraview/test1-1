@@ -1,4 +1,4 @@
-import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.22/dist/web.js'
+import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.22/dist/web.js';
 
 class Loader {
     static loadedFiles = [];
@@ -29,6 +29,11 @@ class Loader {
     static onMediaLoaded(src, onload, element) {
         this.loadedFiles.push(src);
         onload();
+
+        if (element.tagName === 'VIDEO') {
+            element.play().catch(e => console.error("Erro ao tentar autoplay: ", e));
+        }
+
         document.body.removeChild(element); // Remove após carregar
     }
 
