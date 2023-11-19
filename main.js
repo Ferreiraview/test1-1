@@ -1,4 +1,4 @@
-// import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.22/dist/web.js'; // Comentado devido à falta de declaração de tipo
+import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.22/dist/web.js'; 
 
 class Loader {
     static loadedFiles: string[] = [];
