@@ -95,22 +95,6 @@ function runTypeBot(asset, typebotInfo, next) {
     })
 }
 
-function typeWriterEffect(element, text, speed) {
-    let i = 0;
-    function typing() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typing, speed);
-        }
-    }
-    typing();
-}
-
-const container = document.querySelector('.typebot-container');
-typeWriterEffect(container, 'Seu texto aqui...', 100); 
-
-
 function generateBotsInFlow(bots) {
     const flow = [];
     let nowArr = flow;
