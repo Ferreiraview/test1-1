@@ -34,12 +34,14 @@
         <!-- <img src="images/0.jpg"> -->
     </div>
     <div id="typebots" class="typebot-container">
-        <span id="type-text"></span>
+        <span id="type-text">Olá, esse é um efeito de máquina de escrever!</span>
         <span class="blinking-cursor">|</span>
     </div>
     <script>
-        const text = "Olá, esse é um efeito de máquina de escrever!";
         const typeTextElement = document.getElementById("type-text");
+        const text = typeTextElement.innerHTML;
+        typeTextElement.innerHTML = '';
+
         let index = 0;
 
         function typeWriter() {
