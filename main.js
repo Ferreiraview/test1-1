@@ -9,13 +9,6 @@ class Loader {
             return;
         }
 
-        (function($){
-//PLAYS VIDEO IN LOW POWER MODE
-$('video').addClass('inlinevideo');
-$('body').on('click touchstart', function ()  {var videoElement = document.getElementsByClassName('inlinevideo');if (videoElement.playing) {} else {$('.inlinevideo').trigger('play');}});
-
-})(jQuery);
-
         const element = this.createElementByType(type);
         element.src = src;
 
