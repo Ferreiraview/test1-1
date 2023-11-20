@@ -27,6 +27,23 @@ class Loader {
         document.body.appendChild(element); // Temporariamente para carregar
     }
 
+    document.addEventListener('DOMContentLoaded', function() {
+    var typebotContainer = document.querySelector('.typebot-container');
+    var textToType = "Seu texto aqui...";
+    var typingDelay = 100; // delay em milissegundos
+    var currentCharIndex = 0;
+
+    function typeWriter() {
+        if (currentCharIndex < textToType.length) {
+            typebotContainer.textContent += textToType.charAt(currentCharIndex);
+            currentCharIndex++;
+            setTimeout(typeWriter, typingDelay);
+        }
+    }
+
+    typeWriter();
+});
+
     static onMediaLoaded(src, onload, element) {
         this.loadedFiles.push(src);
         onload();
