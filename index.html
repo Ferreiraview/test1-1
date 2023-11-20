@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div id="bg" style="position: absolute; width: 100%; height: 100%;">
-            <!-- <img src="images/0.jpg"> -->
-        </div>
-        <div id="typebots">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .typebot-container {
+            font-family: 'Satoshi-900', sans-serif;
+            font-size: 3vw;
+            line-height: 1.0;
+            max-height: none;
+            min-height: 0;
+            height: auto;
 
-        </div>
-        <script src="main.js" type="module" ></script>
-    </body>
+            @media (max-width: 600px) {
+                font-size: 5vw;
+            }
+        }
+
+        .blinking-cursor {
+            /* Cria o efeito de cursor piscando */
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="bg" style="position: absolute; width: 100%; height: 100%;">
+        <!-- <img src="images/0.jpg"> -->
+    </div>
+    <div id="typebots" class="typebot-container">
+        <span id="type-text"></span>
+        <span class="blinking-cursor">|</span>
+    </div>
+    <script>
+        const text = "Olá, esse é um efeito de máquina de escrever!";
+        const typeTextElement = document.getElementById("type-text");
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                typeTextElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        typeWriter();
+    </script>
+    <script src="main.js" type="module"></script>
+</body>
 </html>
