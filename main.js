@@ -92,7 +92,29 @@ function runTypeBot(asset, typebotInfo, next) {
                 }
             }
         });
+        // Aqui chamamos a função de efeito de máquina de escrever
+        setTimeout(() => typeWriterEffect(typebotDiv.id), 500); // Ajuste o tempo conforme necessário
     })
+}
+
+// Função para efeito de máquina de escrever
+function typeWriterEffect(elementId, speed = 100) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+
+    const text = element.innerText;
+    element.innerText = '';
+    let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            element.innerText += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    typeWriter();
 }
 
 function generateBotsInFlow(bots) {
