@@ -29,7 +29,7 @@ class Loader {
 
     document.addEventListener('DOMContentLoaded', function() {
     var typebotContainer = document.querySelector('.typebot-container');
-    var textToType = "Seu texto aqui...";
+    var textToType = "Aqui podemos fazer magia com este tipo de fluxos publicados aqui na internet";
     var typingDelay = 100; // delay em milissegundos
     var currentCharIndex = 0;
 
