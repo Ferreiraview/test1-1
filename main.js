@@ -16,7 +16,6 @@ class Loader {
             element.muted = true;
             element.autoplay = true;
             element.playsinline = true;
-            element.datawfignore = true;
             element.addEventListener('canplaythrough', () => this.onMediaLoaded(src, onload, element));
         } else if (type === 'img') {
             element.addEventListener('load', () => this.onMediaLoaded(src, onload, element));
@@ -92,6 +91,8 @@ function runTypeBot(asset, typebotInfo, next) {
                 }
             }
         });
+    })
+}
 
 function generateBotsInFlow(bots) {
     const flow = [];
