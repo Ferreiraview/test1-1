@@ -137,4 +137,5 @@ function handleResize() {
 
     const bots = [bot1, bot2];
 
-    runTypeBot(...
+    runTypeBot(...generateBotsInFlow(bots));
+})();
