@@ -2,13 +2,15 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .bg-content {
     position: fixed;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
+    width: 100vw; /* Largura do viewport */
+    height: 100vh; /* Altura do viewport */
 }
+
 .bg-div {
     position: fixed;
     right: 0;
@@ -16,10 +18,19 @@ body {
     width: 100%;
     height: 100%;
 }
-.typebot{
+
+.typebot {
     position: fixed;
     right: 0;
-    top: 10%;
+    top: 10vh; /* 10% da altura do viewport */
     width: 100%;
-    height: 50%;
+    height: 50vh; /* 50% da altura do viewport */
+}
+
+/* Media Queries para ajustes em telas menores */
+@media screen and (max-width: 768px) {
+    .typebot {
+        top: 5vh; /* Ajuste para telas menores */
+        height: 60vh; /* Ajuste para telas menores */
+    }
 }
