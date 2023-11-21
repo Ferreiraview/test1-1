@@ -49,7 +49,6 @@ class Loader {
 }
 
 const bg = document.getElementById('bg');
-
 function changeBg(type, src) {
     const newElement = Loader.createElementByType(type);
     if (type === 'video') {
@@ -68,7 +67,6 @@ function changeBg(type, src) {
 }
 
 let typeBotIndex = 0;
-
 function runTypeBot(asset, typebotInfo, next) {
     Loader.load(asset.type, asset.src, () => {
         changeBg(asset.type, asset.src);
@@ -106,14 +104,6 @@ function generateBotsInFlow(bots) {
         nowArr = newNowArr;
     }
     return flow;
-}
-
-// Adicionando o Event Listener para lidar com o redimensionamento da janela
-window.addEventListener('resize', handleResize);
-
-function handleResize() {
-    // Aqui você pode adicionar lógica para ajustar elementos ou comportamentos
-    // com base no novo tamanho da tela, se necessário.
 }
 
 (() => {
